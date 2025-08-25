@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-camera"></i> PicWorld</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to My Photography World</h1>
+        <p>Capturing moments that last forever</p>
+        <div class="hero-buttons">
+            <a href="#gallery" class="btn primary">View Portfolio</a>
+            <a href="#contact" class="btn secondary">Book a Session</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>My Portfolio</h2>
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="wedding">Wedding</button>
+            <button class="filter-btn" data-filter="portrait">Portrait</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="images/photo1.jpg" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo2.jpg" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo3.jpg" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo4.jpg" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo5.jpg" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo6.jpg" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo7.jpg" alt="Photography" data-filter="landscape"></div>
+            <div class="gallery-item"><img src="images/photo8.jpg" alt="Photography" data-filter="portrait"></div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="images/photographer.jpg" alt="Photographer">
+            <div class="about-text">
+                <h3>Omkar Ghare</h3>
+                <p class="title">Professional Photographer</p>
+                <p class="sub-title">I am a passionate photographer with years of experience in capturing life's beautiful moments.
+                Specializing in portrait, landscape, and event photography.</p>
+                <div class="achievements">
+                    <div class="achievement-item">
+                        <span class="number">6+</span>
+                        <span class="label">Months Experience</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="number">15+</span>
+                        <span class="label">Happy Customers</span>
+                    </div>
+                    <div class="achievement-item">
+                        <span class="number">50+</span>
+                        <span class="label">Photo Sessions</span>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Portrait Photography</span>
+                    <span class="skill-tag">Wedding Photography</span>
+                    <span class="skill-tag">Landscape Photography</span>
+                    <span class="skill-tag">Event Photography</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>My Services</h2>
+        <p class="services-subtitle">Providing professional photography services tailored to your needs</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-camera"></i>
+                <h3>Wedding Photography</h3>
+                <p>Capturing your special moments with style and elegance.</p>                <ul class="service-features">
+                    <li>Full-day coverage</li>
+                    <li>Professional editing</li>
+                    <li>Online gallery</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-portrait"></i>
+                <h3>Portrait Sessions</h3>
+                <p>Professional portraits that bring out your best features.</p>
+                <ul class="service-features">
+                    <li>Studio sessions</li>
+                    <li>Natural lighting</li>
+                    <li>Multiple outfits</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-building"></i>
+                <h3>Commercial Photography</h3>
+                <p>High-quality images for your business needs.</p>
+                <ul class="service-features">
+                    <li>Product photography</li>
+                    <li>Corporate events</li>
+                    <li>Brand storytelling</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mountain"></i>
+                <h3>Landscape Photography</h3>
+                <p>Stunning natural and urban landscape photography.</p>
+                <ul class="service-features">
+                    <li>High-resolution images</li>
+                    <li>Location scouting</li>
+                    <li>Post-processing included</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-birthday-cake"></i>
+                <h3>Event Photography</h3>
+                <p>Comprehensive event coverage for all occasions.</p>
+                <ul class="service-features">
+                    <li>Full event coverage</li>
+                    <li>Quick turnaround</li>
+                    <li>Digital delivery</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Graduation Photos</h3>
+                <p>Celebrate your academic achievements.</p>
+                <ul class="service-features">
+                    <li>Individual & group shots</li>
+                    <li>Campus locations</li>
+                    <li>Same-day previews</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-heart"></i>
+                <h3>Engagement Sessions</h3>
+                <p>Romantic pre-wedding photo sessions.</p>
+                <ul class="service-features">
+                    <li>Location selection</li>
+                    <li>Outfit consultation</li>
+                    <li>Digital album</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-baby"></i>
+                <h3>Family Portraits</h3>
+                <p>Capture precious family moments.</p>
+                <ul class="service-features">
+                    <li>Indoor/outdoor sessions</li>
+                    <li>Pet-friendly shoots</li>
+                    <li>Print packages</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+
+            <!-- New Maternity Photography Service Card -->
+            <div class="service-card">
+                <i class="fas fa-heart"></i>
+                <h3>Maternity Photography</h3>
+                <p>Celebrate the beauty of motherhood with elegant maternity portraits.</p>
+                <ul class="service-features">
+                    <li>Studio & outdoor shoots</li>
+                    <li>Wardrobe consultation</li>
+                    <li>Custom photo albums</li>
+                </ul>
+                <a href="#contact" class="btn">Get Quote</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Clients Say</h2>
+        <p class="section-subtitle">Hear from our satisfied clients</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="client-image">
+                    <img src="images/client.jpg" alt="Client 1">
+                </div>
+                <div class="testimonial-content">
+                    <p>"Working with this photographer was an absolute pleasure. They captured our wedding moments perfectly, creating memories that will last a lifetime."</p>
+                    <div class="client-info">
+                        <h4>Dev Sharma</h4>
+                        <span>Wedding Photography</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="client-image">
+                    <img src="images/client.jpg" alt="Client 2">
+                </div>
+                <div class="testimonial-content">
+                    <p>"The attention to detail and creativity in every shot was remarkable. Our family portraits turned out better than we could have imagined!"</p>
+                    <div class="client-info">
+                        <h4>Sarah kulkarni</h4>
+                        <span>Family Portrait Session</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="client-image">
+                    <img src="images/client.jpg" alt="Client 3">
+                </div>
+                <div class="testimonial-content">
+                    <p>"Professional, creative, and incredibly talented! The commercial photos for our business were exactly what we needed."</p>
+                    <div class="client-info">
+                        <h4>Divya Patil</h4>
+                        <span>Commercial Photography</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="blog" class="blog">
+        <h2>Photography Blog</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="images/blog1.jpg" alt="Blog Post 1">
+                    <div class="blog-date">
+                        <span>15</span>
+                        <span>Mar</span>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h3>Essential Tips for Perfect Sunset Photography</h3>
+                    <p>Learn the secrets to capturing stunning sunset photos that will take your breath away...</p>
+                    <div class="blog-meta">
+                        <span><i class="fas fa-user"></i> John Doe</span>
+                        <span><i class="fas fa-comments"></i> 12 Comments</span>
+                    </div>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="images/blog2.jpg" alt="Blog Post 2">
+                    <div class="blog-date">
+                        <span>10</span>
+                        <span>Mar</span>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h3>Wedding Photography: Capturing Precious Moments</h3>
+                    <p>Discover the art of wedding photography and how to capture those special moments...</p>
+                    <div class="blog-meta">
+                        <span><i class="fas fa-user"></i> John Doe</span>
+                        <span><i class="fas fa-comments"></i> 8 Comments</span>
+                    </div>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="images/blog3.jpg" alt="Blog Post 3">
+                    <div class="blog-date">
+                        <span>5</span>
+                        <span>Mar</span>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <h3>Essential Camera Gear for Professional Photography</h3>
+                    <p>A comprehensive guide to the must-have equipment for professional photography...</p>
+                    <div class="blog-meta">
+                        <span><i class="fas fa-user"></i> John Doe</span>
+                        <span><i class="fas fa-comments"></i> 15 Comments</span>
+                    </div>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+1 234 567 890</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>contact@PicWorld.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-location-dot"></i>
+                    <p>123 Photography Street, City, Country</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-row">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                </div>
+                <input type="tel" placeholder="Your Phone">
+                <select required>
+                    <option value="">Select Service</option>
+                    <option value="wedding">Wedding Photography</option>
+                    <option value="portrait">Portrait Session</option>
+                    <option value="event">Event Coverage</option>
+                    <option value="commercial">Commercial Photography</option>
+                </select>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PicWorld</h3>
+                <p>Capturing life's precious moments with artistic vision and professional excellence.</p>
+                <div class="social-links">
+                    <!-- ... social media links ... -->
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 PicWorld By Omkar R. Ghare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal animation
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.gallery, .about, .services, .contact');
+            
+            reveals.forEach(section => {
+                var windowHeight = window.innerHeight;
+                var revealTop = section.getBoundingClientRect().top;
+                var revealPoint = 150;
+                
+                if(revealTop < windowHeight - revealPoint) {
+                    section.classList.add('reveal');
+                }
+            });
+        }
+
+    </script>
+    
+</body>
+</html>
+
