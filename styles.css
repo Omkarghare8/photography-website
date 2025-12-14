@@ -1,3 +1,82 @@
+/* Ensure all main sections always fill the viewport width and remove unwanted margin/width constraints */
+header, .hero, .gallery, .about, .services, .testimonials, .blog, .contact, footer {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Remove container classes from main sections by default (utility classes still available for inner elements) */
+/* Extra responsive breakpoints and utilities for comfort/customization */
+@media (max-width: 400px) {
+    html { font-size: 14px; }
+    .hero h1 { font-size: 1.5rem; }
+    .hero p { font-size: 0.95rem; }
+    .btn, button, .submit-btn { font-size: 0.95rem; padding: 12px 10px; }
+    .about-content img, .gallery-item img { height: 180px !important; }
+}
+
+@media (min-width: 401px) and (max-width: 599px) {
+    html { font-size: 15px; }
+    .hero h1 { font-size: 1.7rem; }
+    .about-content img, .gallery-item img { height: 220px !important; }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    html { font-size: 16px; }
+    .hero h1 { font-size: 2.2rem; }
+    .about-content img, .gallery-item img { height: 260px !important; }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+    html { font-size: 17px; }
+    .hero h1 { font-size: 2.7rem; }
+    .about-content img, .gallery-item img { height: 320px !important; }
+}
+
+@media (min-width: 1200px) {
+    html { font-size: 18px; }
+    .hero h1 { font-size: 3.2rem; }
+    .about-content img, .gallery-item img { height: 350px !important; }
+}
+
+/* Section padding utilities */
+.section-pad-xs { padding: 20px 5% !important; }
+.section-pad-sm { padding: 40px 5% !important; }
+.section-pad-md { padding: 60px 5% !important; }
+.section-pad-lg { padding: 100px 5% !important; }
+
+/* Customizable container width */
+.container-xs { max-width: 400px; margin: 0 auto; }
+.container-sm { max-width: 700px; margin: 0 auto; }
+.container-md { max-width: 1000px; margin: 0 auto; }
+.container-lg { max-width: 1300px; margin: 0 auto; }
+
+/* Utility for text alignment */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
+/* Utility for margin and padding */
+.m-0 { margin: 0 !important; }
+.mt-1 { margin-top: 8px !important; }
+.mb-1 { margin-bottom: 8px !important; }
+.mt-2 { margin-top: 16px !important; }
+.mb-2 { margin-bottom: 16px !important; }
+.p-0 { padding: 0 !important; }
+.pt-1 { padding-top: 8px !important; }
+.pb-1 { padding-bottom: 8px !important; }
+.pt-2 { padding-top: 16px !important; }
+.pb-2 { padding-bottom: 16px !important; }
+
+/* Utility for border radius */
+.rounded { border-radius: 8px !important; }
+.rounded-lg { border-radius: 20px !important; }
+
+/* Utility for shadow */
+.shadow { box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important; }
+.shadow-lg { box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important; }
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +87,10 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
+
+/* Account for fixed header so content isn't hidden underneath */
+body { padding-top: 72px; }
+@media (max-width: 480px) { body { padding-top: 64px; } }
 
 /* Header & Navigation */
 header {
@@ -21,7 +104,13 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
+    padding: 18px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(145,214,171,0.95);
+    backdrop-filter: blur(4px);
 }
 
 .logo {
@@ -41,6 +130,7 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    max-height: none;
 }
 
 nav ul li a {
@@ -366,6 +456,7 @@ nav ul li a:hover {
     font-size: 42px;
     font-weight: bold;
     background: linear-gradient(45deg, #ffd700, #ff8c00);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
@@ -879,6 +970,7 @@ footer {
 
 .achievement-item .number {
     background: linear-gradient(45deg, #ffd700, #ff8c00);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.3s;
@@ -1965,4 +2057,192 @@ footer {
     width: 50%;
     height: 1px;
     background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+/* Mobile-first enhancements and nav toggle */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+    width: 28px;
+    height: 2px;
+    background: #de3838;
+    display: block;
+    position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background: #de3838;
+}
+
+.nav-toggle .hamburger::before { top: -8px; }
+.nav-toggle .hamburger::after { top: 8px; }
+
+/* Make images fluid by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove fixed background on small devices for performance */
+@media (max-width: 768px) {
+    .nav-toggle { display: inline-block; }
+    nav ul { display: none; }
+    nav[aria-hidden="true"] ul { display: none; }
+    nav.open ul { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .hero { background-attachment: scroll; min-height: 70vh; }
+    .hero h1 { padding-top: 60px; }
+}
+
+/* Animated hamburger -> X */
+.nav-toggle {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    transition: transform 300ms ease, opacity 200ms ease;
+}
+
+nav.open .hamburger {
+    background: transparent;
+}
+
+nav.open .hamburger::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+nav.open .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+nav.open .hamburger::before,
+nav.open .hamburger::after {
+    background: #333;
+}
+
+/* Smooth nav open/close */
+nav ul {
+    transition: max-height 300ms ease, opacity 250ms ease, transform 250ms ease;
+    overflow: hidden;
+    max-height: 0; /* collapsed by default on mobile via media queries */
+}
+
+/* When nav is not collapsed on desktop, ensure max-height is large */
+@media (min-width: 769px) {
+    nav ul { max-height: 1000px !important; display:flex !important; flex-direction:row !important; }
+}
+
+/* visible state when open (mobile) */
+nav.open ul { max-height: 600px; opacity: 1; }
+
+/* Debug styles for image load state */
+.img-broken { outline: 3px dashed #ff4444; background: #f3f3f3; }
+.img-loaded { transition: opacity 300ms ease; opacity: 1; }
+
+/* Gallery breakpoint control: small -> 1, tablet -> 2, desktop -> 3, large -> 4 */
+.gallery-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1300px) {
+    .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Additional breakpoints for tablets and large screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .hero h1 { font-size: 48px; }
+    .gallery-item img, .gallery-item { height: auto; }
+}
+
+@media (min-width: 1201px) {
+    .hero h1 { font-size: 72px; }
+}
+
+/* Comprehensive responsive refinements */
+/* Base mobile-first sizes already applied above; these rules refine tablet+ layouts */
+
+/* Typography scaling */
+html { font-size: 16px; }
+@media (max-width: 480px) { html { font-size: 15px; } }
+@media (min-width: 769px) and (max-width: 1024px) { html { font-size: 16px; } }
+@media (min-width: 1200px) { html { font-size: 18px; } }
+
+/* Header/nav spacing for different sizes */
+nav { padding: 18px 5%; }
+@media (max-width: 480px) { nav { padding: 12px 4%; } .logo { font-size: 18px; } }
+
+/* Hero adjustments */
+.hero { padding: 40px 20px; }
+.hero h1 { font-size: 2.2rem; }
+.hero p { font-size: 1rem; max-width: 90%; }
+@media (min-width: 769px) { .hero { padding: 80px 5%; } .hero h1 { font-size: 3.5rem; } .hero p { font-size: 1.25rem; } }
+
+/* Services grid: flow to 1/2/3 columns depending on width */
+.services-grid { grid-template-columns: 1fr; }
+@media (min-width: 700px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Testimonials: stack on mobile, row on larger screens */
+.testimonials-grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 800px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Blog grid */
+.blog-grid { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Contact layout: stack on mobile, side-by-side on larger screens */
+.contact-container { grid-template-columns: 1fr; }
+@media (min-width: 900px) { .contact-container { grid-template-columns: 1fr 1.2fr; } }
+
+/* Make buttons larger and touch-friendly on mobile */
+.btn, button, .submit-btn { padding: 12px 18px; border-radius: 8px; }
+@media (max-width: 480px) { .btn, button, .submit-btn { padding: 14px 18px; font-size: 1rem; } }
+
+/* Improve focus outlines for accessibility */
+a:focus, button:focus, .btn:focus, input:focus, select:focus, textarea:focus {
+    outline: 3px solid rgba(255, 200, 0, 0.9);
+    outline-offset: 2px;
+}
+
+/* Footer layout */
+.footer-content { grid-template-columns: 1fr; }
+@media (min-width: 800px) { .footer-content { grid-template-columns: repeat(3, 1fr); } }
+
+/* Small utility helpers */
+.center { display:flex; align-items:center; justify-content:center; }
+.visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* Reduce heavy shadows and transitions on very small devices for performance */
+@media (max-width: 400px) {
+    .service-card, .gallery-item, .testimonial-card { box-shadow: none; }
+    .hero { background-attachment: scroll; }
 }
