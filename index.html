@@ -11,6 +11,9 @@
     <header>
         <nav>
             <div class="logo"><i class="fas fa-camera"></i> PicWorld</div>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#gallery">Gallery</a></li>
@@ -46,21 +49,21 @@
             <button class="filter-btn" data-filter="nature">Nature</button>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/photo1.jpg" alt="Photography"></div>
-            <div class="gallery-item"><img src="images/photo2.jpg" alt="Photography"></div>
-            <div class="gallery-item"><img src="images/photo3.jpg" alt="Photography"></div>
-            <div class="gallery-item"><img src="images/photo4.jpg" alt="Photography"></div>
-            <div class="gallery-item"><img src="images/photo5.jpg" alt="Photography"></div>
-            <div class="gallery-item"><img src="images/photo6.jpg" alt="Photography"></div>
-            <div class="gallery-item"><img src="images/photo7.jpg" alt="Photography" data-filter="landscape"></div>
-            <div class="gallery-item"><img src="images/photo8.jpg" alt="Photography" data-filter="portrait"></div>
+            <div class="gallery-item"><img src="images/photo1.jpg" loading="lazy" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo2.jpg" loading="lazy" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo3.jpg" loading="lazy" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo4.jpg" loading="lazy" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo5.jpg" loading="lazy" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo6.jpg" loading="lazy" alt="Photography"></div>
+            <div class="gallery-item"><img src="images/photo7.jpg" loading="lazy" alt="Photography" data-filter="landscape"></div>
+            <div class="gallery-item"><img src="images/photo8.jpg" loading="lazy" alt="Photography" data-filter="portrait"></div>
         </div>
     </section>
 
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="images/photographer.jpg" alt="Photographer">
+            <img src="images/photographer.jpg" loading="lazy" alt="Photographer">
             <div class="about-text">
                 <h3>Omkar Ghare</h3>
                 <p class="title">Professional Photographer</p>
@@ -207,7 +210,7 @@
                     <i class="fas fa-quote-right"></i>
                 </div>
                 <div class="client-image">
-                    <img src="images/client.jpg" alt="Client 1">
+                    <img src="images/client.jpg" loading="lazy" alt="Client 1">
                 </div>
                 <div class="testimonial-content">
                     <p>"Working with this photographer was an absolute pleasure. They captured our wedding moments perfectly, creating memories that will last a lifetime."</p>
@@ -230,7 +233,7 @@
                     <i class="fas fa-quote-right"></i>
                 </div>
                 <div class="client-image">
-                    <img src="images/client.jpg" alt="Client 2">
+                    <img src="images/client.jpg" loading="lazy" alt="Client 2">
                 </div>
                 <div class="testimonial-content">
                     <p>"The attention to detail and creativity in every shot was remarkable. Our family portraits turned out better than we could have imagined!"</p>
@@ -253,7 +256,7 @@
                     <i class="fas fa-quote-right"></i>
                 </div>
                 <div class="client-image">
-                    <img src="images/client.jpg" alt="Client 3">
+                    <img src="images/client.jpg" loading="lazy" alt="Client 3">
                 </div>
                 <div class="testimonial-content">
                     <p>"Professional, creative, and incredibly talented! The commercial photos for our business were exactly what we needed."</p>
@@ -279,7 +282,7 @@
         <div class="blog-grid">
             <div class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog1.jpg" alt="Blog Post 1">
+                    <img src="images/blog1.jpg" loading="lazy" alt="Blog Post 1">
                     <div class="blog-date">
                         <span>15</span>
                         <span>Mar</span>
@@ -297,7 +300,7 @@
             </div>
             <div class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog2.jpg" alt="Blog Post 2">
+                    <img src="images/blog2.jpg" loading="lazy" alt="Blog Post 2">
                     <div class="blog-date">
                         <span>10</span>
                         <span>Mar</span>
@@ -315,7 +318,7 @@
             </div>
             <div class="blog-card">
                 <div class="blog-image">
-                    <img src="images/blog3.jpg" alt="Blog Post 3">
+                    <img src="images/blog3.jpg" loading="lazy" alt="Blog Post 3">
                     <div class="blog-date">
                         <span>5</span>
                         <span>Mar</span>
@@ -408,26 +411,7 @@
         </div>
     </footer>
 
-    <script>
-        // Scroll reveal animation
-        window.addEventListener('scroll', reveal);
-
-        function reveal() {
-            var reveals = document.querySelectorAll('.gallery, .about, .services, .contact');
-            
-            reveals.forEach(section => {
-                var windowHeight = window.innerHeight;
-                var revealTop = section.getBoundingClientRect().top;
-                var revealPoint = 150;
-                
-                if(revealTop < windowHeight - revealPoint) {
-                    section.classList.add('reveal');
-                }
-            });
-        }
-
-    </script>
-    
+    <script src="script.js"></script>
 </body>
 </html>
 
